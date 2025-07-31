@@ -72,7 +72,7 @@ AUTHENTICATION_BACKENDS = [
 from datetime import timedelta
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
 }
 
@@ -85,7 +85,7 @@ CORS_ALLOWED_ORIGINS = [
     
       "http://192.168.1.39:3000",
       
-    "http://192.168.217.177:3000",
+    "http://192.168.10.1:3000",
 ]
 
 
@@ -135,6 +135,32 @@ DATABASES = {
     }
 }
 
+
+
+'''  
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# Probablemente el host de tu organización. Verifica si es correcto.
+EMAIL_HOST = 'smtp.sudeaseg.gob.ve'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+# Aquí es donde se leen las credenciales de forma segura desde el archivo .env
+EMAIL_HOST_USER =  'ernesto.marchetti@sudeaseg.gob.ve'
+EMAIL_HOST_PASSWORD =  'Maraca87$'
+
+# Correo por defecto desde donde se enviarán los mensajes
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+'''  
+
+
+  
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587  # 465 para SSL
+EMAIL_USE_TLS = True  # False si usas SSL
+EMAIL_HOST_USER = 'ernesto199813@gmail.com'  # Tu Gmail completo
+EMAIL_HOST_PASSWORD = 'dxrxoydksaxvekqc'  # La contraseña de aplicación
 
 
 # Password validation
